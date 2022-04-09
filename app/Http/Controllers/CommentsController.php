@@ -38,11 +38,13 @@ class CommentsController extends Controller
         return redirect('/comment')->with('message', 'Your comment has been added successfully');
     }
 
+    public function show (blogs $blogs)
+    {
+        // return view('comments.show');
+        // return redirect('/blog/{{ }}');
+        return view('comments.show')
+            ->with('comments', blogs::where('blog_id',$blogs)->first());
+    }
 
-    // public function show ($user_id)
-    // {
-    //     return view('blogs.show')
-    //         ->with('blogs', blogs::where('user_id',$user_id)->first());
-    // }
 
 }

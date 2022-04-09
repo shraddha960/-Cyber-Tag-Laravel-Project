@@ -5,6 +5,8 @@ use App\Models\Blogs;
 use App\Models\Comments;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +26,18 @@ use App\Http\Controllers\CommentsController;
 //     // return view('welcome', ['message' => 'Hey this is shraddha']);
 // });
 
-Route::get('/home', function () {
-    $blogs = blogs::all();
+Route::get('/', function () {
+    // $blogs = blogs::all();
 
-    return view('welcome', ['blogs' => $blogs]);
-    // return view('welcome', ['message' => 'Hey this is shraddha']);
+    // return view('welcome', ['blogs' => $blogs]);
+    return view('welcome', ['message' => 'Welcome to Blog Application']);
 });
 
 // Route::get('/blog', [BlogsController::class, "index"]);
+
+Route::resource('/user', UserController::class);
+
+Route::resource('/home', HomeController::class);
 
 Route::resource('/blog', BlogsController::class);
 

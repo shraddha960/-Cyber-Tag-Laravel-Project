@@ -41,23 +41,4 @@ class BlogsController extends Controller
             ->with('blogs', blogs::where('user_id',$user_id)->first());
     }
 
-    // public function edit ($user_id) 
-    // {
-    //     return view('blogs.edit')
-    //         ->with('blogs', blogs::where('user_id',$user_id)->first());
-    // }
-
-    // public function update (blogs $blog) 
-    // {
-    //     // request()->validate([
-    //     //     'content' => 'required'
-    //     // ]);
-
-    //     // $blog->update([
-    //     //     'content' => request('content')
-    //     // ]);
-
-    //     // return redirect('/blog');
-    // }
-
 }
